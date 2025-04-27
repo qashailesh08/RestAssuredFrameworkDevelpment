@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="UserSuite">
+	<listeners>
+		<listener class-name="api.utilities.ExtendsReportManager"></listener>
+	</listeners>
+	<test name="UserTest">
+		<classes>
+			<class name="api.test.properties.UserTests" />
+		</classes>
+	</test> <!-- UserTest -->
+</suite> <!-- UserSuite -->
