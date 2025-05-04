@@ -49,3 +49,18 @@
 2025-04-26 08:47:18 [main] INFO  api.test.properties.UserTests - ************ User Updated ************
 2025-04-26 08:47:18 [main] INFO  api.test.properties.UserTests - ************ Deleting User ************
 2025-04-26 08:47:28 [main] INFO  api.test.properties.UserTests - *********** User Deleted ************
+2025-05-02 18:57:00 [main] INFO  api.test.properties.UserTests - ************ Creating User *************
+2025-05-02 18:57:09 [main] INFO  api.test.properties.UserTests - ************ User Created *************
+2025-05-02 18:57:09 [main] INFO  api.test.properties.UserTests - ************ Reading User By User_name *************
+2025-05-02 18:57:13 [main] INFO  api.test.properties.UserTests - ************ User info is displayed *************
+2025-05-02 18:57:13 [main] INFO  api.test.properties.UserTests - ************ Updating User ************
+2025-05-02 18:57:16 [main] INFO  api.test.properties.UserTests - ************ User Updated ************
+2025-05-02 18:57:16 [main] INFO  api.test.properties.UserTests - ************ Deleting User ************
+2025-05-02 18:57:19 [main] INFO  api.test.properties.UserTests - *********** User Deleted ************
+2025-05-02 19:56:08 [main] INFO  api.test.properties.UserTests - ************ Creating User *************
+2025-05-02 19:56:15 [main] INFO  api.test.properties.UserTests - ************ User Created *************
+2025-05-02 19:56:15 [main] INFO  api.test.properties.UserTests - ************ Reading User By User_name *************
+2025-05-02 19:56:18 [main] INFO  api.test.properties.UserTests - ************ Updating User ************
+2025-05-02 19:56:22 [main] INFO  api.test.properties.UserTests - ************ User Updated ************
+2025-05-02 19:56:22 [main] INFO  api.test.properties.UserTests - ************ Deleting User ************
+2025-05-02 19:56:27 [main] INFO  api.test.properties.UserTests - *********** User Deleted ************
