@@ -6,7 +6,7 @@
 	</listeners>
 	<test name="UserTest">
 		<classes>
-			<class name="api.test.properties.UserTests" />
+			<class name="api.test.StoreTests" />
 		</classes>
 	</test> <!-- UserTest -->
 </suite> <!-- UserSuite -->

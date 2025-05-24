@@ -13,6 +13,7 @@ public class StoreTests {
 
 	public StoreModule storepayload;
 	public Logger logger;
+
 	@BeforeClass
 	public void createData() {
 		storepayload = new StoreModule();
@@ -22,7 +23,8 @@ public class StoreTests {
 		storepayload.setQuantity(1);
 		storepayload.setShipedate("4-05-2025");
 		storepayload.setStatus("active");
-		logger=LogManager.getLogger(this.getClass());
+		logger = LogManager.getLogger(this.getClass());
+		logger.info("Creating Loggers information..... | For Store API Test Cases..|");
 	}
 
 	@Test(priority = 1)
@@ -48,7 +50,7 @@ public class StoreTests {
 	public void testdeleteorder() {
 		logger.info("============ Deleting Order ==============");
 		int id = storepayload.getId();
-		Response res = StoreEndPointes.delete_order(this.storepayload.getId());
+		Response res = StoreEndPointes.delete_order(id);
 		Assert.assertEquals(res.getStatusCode(), 200);
 		logger.info("============ Order Deleted ==============");
 	}
