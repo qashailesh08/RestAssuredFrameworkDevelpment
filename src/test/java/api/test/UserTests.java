@@ -81,12 +81,22 @@ public class UserTests {
 
 	}
 
+//	@Test(priority = 4)
+//	public void testDeleteUserByName() {
+//		logger.info("************ Deleting User ************");
+////		StaticWait.staticWait(3000);
+//		Response res = UserEndPoints.deleteUser(this.userPayload.getUsername());
+//		Assert.assertEquals(res.getStatusCode(), 200);
+//		logger.info("*********** User Deleted ************");
+//	}
 	@Test(priority = 4)
 	public void testDeleteUserByName() {
 		logger.info("************ Deleting User ************");
-//		StaticWait.staticWait(3000);
+
 		Response res = UserEndPoints.deleteUser(this.userPayload.getUsername());
-		Assert.assertEquals(res.getStatusCode(), 200);
+		res.then().log().all();
+
+		Assert.assertEquals(res.getStatusCode(), 200); // ✅ for PetStore API
 		logger.info("*********** User Deleted ************");
 	}
 
