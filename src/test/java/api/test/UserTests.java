@@ -37,22 +37,26 @@ public class UserTests {
 	@Test(priority = 1)
 	public void testpostuser() {
 		logger.info("************ Creating User *************");
+
 		Response res = UserEndPoints.create_user(userPayload);
 		res.then().log().all();
+
+		// DEBUG: Print Username and Status Code
+		System.out.println("POST Username: " + userPayload.getUsername());
+		System.out.println("POST Status Code: " + res.getStatusCode());
+		System.out.println("POST Response: " + res.asString());
+
 		Assert.assertEquals(res.getStatusCode(), 200);
 		logger.info("************ User Created *************");
 	}
 
 	@Test(priority = 2)
 	public void testGetUserByName() {
-		logger.info("************ Reading User By User_name *************");
-//		StaticWait.staticWait(3000);
-		String name = userPayload.getUsername();
-		System.out.println(name);
-		Response res = UserEndPoints.readUser(this.userPayload.getUsername());
+		String username = userPayload.getUsername();
+		Response res = retryGetUser(username, 3); // try 3 times
+
 		res.then().log().all();
 		Assert.assertEquals(res.getStatusCode(), 200);
-		logger.info("************ User info is displayed *************");
 	}
 
 	@Test(priority = 3)
@@ -85,4 +89,19 @@ public class UserTests {
 		Assert.assertEquals(res.getStatusCode(), 200);
 		logger.info("*********** User Deleted ************");
 	}
+
+	public Response retryGetUser(String username, int retries) {
+		Response res = null;
+		while (retries-- > 0) {
+			res = UserEndPoints.getUser(username);
+			if (res.getStatusCode() == 200)
+				break;
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+			}
+		}
+		return res;
+	}
+
 }

@@ -1,0 +1,6 @@
+2025-08-07 20:39:28 [main] INFO  api.test.UserTests - ************ Creating User *************
+2025-08-07 20:39:34 [main] INFO  api.test.UserTests - ************ User Created *************
+2025-08-07 20:39:38 [main] INFO  api.test.UserTests - ************ Updating User ************
+2025-08-07 20:39:41 [main] INFO  api.test.UserTests - ************ User Updated ************
+2025-08-07 20:39:41 [main] INFO  api.test.UserTests - ************ Deleting User ************
+2025-08-07 20:39:44 [main] INFO  api.test.UserTests - *********** User Deleted ************

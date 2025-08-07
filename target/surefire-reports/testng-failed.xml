@@ -9,6 +9,8 @@
       <class name="api.test.StoreTests">
         <methods>
           <include name="testdeleteorder"/>
+          <include name="testpostorder"/>
+          <include name="testgetorder"/>
           <include name="createData"/>
         </methods>
       </class> <!-- api.test.StoreTests -->

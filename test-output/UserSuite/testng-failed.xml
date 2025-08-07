@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [UserSuite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="api.utilities.ExtendsReportManager"/>
-  </listeners>
   <test thread-count="5" name="UserTest(failed)">
     <classes>
-      <class name="api.test.StoreTests">
+      <class name="api.test.UserTests">
         <methods>
-          <include name="testdeleteorder"/>
-          <include name="createData"/>
+          <include name="testDeleteUserByName"/>
+          <include name="setUserData"/>
         </methods>
-      </class> <!-- api.test.StoreTests -->
+      </class> <!-- api.test.UserTests -->
     </classes>
   </test> <!-- UserTest(failed) -->
 </suite> <!-- Failed suite [UserSuite] -->
