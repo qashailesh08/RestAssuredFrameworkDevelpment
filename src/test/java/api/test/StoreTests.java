@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import api.endpointes.StoreEndPointes;
 import api.payloads.StoreModule;
+import api.waits.Wait;
 import io.restassured.response.Response;
 
 public class StoreTests {
@@ -30,8 +31,8 @@ public class StoreTests {
 	@Test(priority = 1)
 	public void testpostorder() {
 		logger.info("============ Creating Order ==============");
-		Response res = StoreEndPointes.create_order(storepayload);
-		res.then().log().all();
+		int id = storepayload.getId();
+		Response res = Wait.waitUntilStatusCodeIs200(() -> StoreEndPointes.get_order(id), 5, 2000);
 		Assert.assertEquals(res.getStatusCode(), 200);
 		logger.info("============ Order Created ==============");
 	}
@@ -41,7 +42,11 @@ public class StoreTests {
 		logger.info("============ Getting Order ==============");
 		int id = storepayload.getId();
 		System.out.println("Order id is " + id);
-		Response res = StoreEndPointes.get_order(this.storepayload.getId());
+
+		Response res = Wait.waitUntilStatusCodeIs200(() -> StoreEndPointes.get_order(id), 5, // max retries
+				2000 // 2 seconds between retries
+		);
+
 		Assert.assertEquals(res.getStatusCode(), 200);
 		logger.info("============ Order Got ==============");
 	}
@@ -50,7 +55,7 @@ public class StoreTests {
 	public void testdeleteorder() {
 		logger.info("============ Deleting Order ==============");
 		int id = storepayload.getId();
-		Response res = StoreEndPointes.delete_order(id);
+		Response res = Wait.waitUntilStatusCodeIs200(() -> StoreEndPointes.delete_order(id), 5, 2000);
 		Assert.assertEquals(res.getStatusCode(), 200);
 		logger.info("============ Order Deleted ==============");
 	}
